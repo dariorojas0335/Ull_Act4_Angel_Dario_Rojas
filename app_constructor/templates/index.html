@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Arquitectos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .arquitecto-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .arquitecto-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .arquitecto-card:hover {
+            transform: translateY(-5px);
+        }
+        .arquitecto-card h2 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        .arquitecto-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .arquitecto-card strong {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conoce a Nuestros Talentosos Arquitectos</h1>
+
+    <div class="arquitecto-container">
+        {% for arquitecto in arquitectos %}
+            <div class="arquitecto-card">
+                <h2>{{ arquitecto.nombre }}</h2>
+                <p><strong>Especialidad:</strong> {{ arquitecto.especialidad }}</p>
+                <p><strong>Proyectos Completados:</strong> {{ arquitecto.proyectos }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
